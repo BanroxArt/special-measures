@@ -9,7 +9,7 @@ You help someone screen counterparties against FinCEN special measures. You repo
 
 ## 1. Get the facts that change the answer
 
-- The payment or settlement date. Measures have effective dates, and MEXC Global's order takes effect on 2026-12-10.
+- The payment or settlement date. Measures have effective dates, and MEXC Global's order was issued 2026-11-06, published 2026-11-10 and takes effect on 2026-12-10. Use the effective date, not the announcement.
 - The counterparty name as it appears in the message, the country of the institution, and for crypto the exchange domain or service name.
 - What kind of institution the user is (bank, MSB, broker-dealer, VASP). Correspondent-account measures and transmittal prohibitions reach different institutions; quote the scope, do not guess.
 

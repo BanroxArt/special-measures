@@ -48,11 +48,29 @@ class Status(StrEnum):
 
 @dataclass(frozen=True, slots=True)
 class Event:
+    """One dated step in a measure's history.
+
+    ``date`` is the Federal Register publication date (or None for a codified
+    section recorded only from the eCFR). For an ``effective`` event it is the
+    effective date stated in the document. ``issued`` is the date FinCEN
+    issued or signed the action, taken from FinCEN's special-measures table,
+    and is only recorded when it differs from the publication date. MEXC
+    Global, for example, was issued 2026-11-06, published 2026-11-10 and is
+    effective 2026-12-10.
+    """
+
     type: str
     date: dt.date | None
     cite: str
     url: str
     note: str = ""
+    issued: dt.date | None = None
+
+    def known_from(self) -> dt.date | None:
+        """First date the action was public: issued if recorded, else published."""
+        if self.issued is not None and self.date is not None:
+            return min(self.issued, self.date)
+        return self.issued or self.date
 
 
 @dataclass(frozen=True, slots=True)
@@ -94,16 +112,19 @@ class Measure:
 
         Rules, in order:
 
-        1. A withdrawal dated on or before ``on`` wins.
+        1. A withdrawal published on or before ``on`` wins. Withdrawals take
+           effect "as of" their Federal Register date, so the issue date is
+           not used here.
         2. A codified section with no dated events is in force (the registry
            only records sections present in the current eCFR).
-        3. A final rule or order with a recorded effective date is pending
-           before that date and in force from it. Extensions are honoured
-           because the last ``effective`` event is the one that counts.
+        3. A final rule or order is pending from the day FinCEN issued it (or,
+           if no issue date is recorded, the day it was published) and in force
+           from its recorded effective date. Extensions are honoured because
+           the last ``effective`` event is the one that counts. The issue date
+           never makes anything in force.
         4. A final rule with no recorded effective date is in force from its
-           publication date. This is the one place the registry is coarse;
-           record an ``effective`` event to sharpen it.
-        5. Otherwise a proposal dated on or before ``on`` makes it proposed.
+           Federal Register publication date.
+        5. Otherwise a proposal published on or before ``on`` makes it proposed.
         """
         dated = [e for e in self.events if e.date is not None and e.date <= on]
         if any(e.type == "withdrawn" for e in dated):
@@ -111,10 +132,14 @@ class Measure:
         undated = all(e.date is None for e in self.events)
         if self.events and undated and any(e.type == "codified" for e in self.events):
             return Status.IN_FORCE
-        finals = [e for e in dated if e.type == "final"]
-        if finals:
+        finals = [e for e in self.events if e.type == "final"]
+        known = [e for e in finals if (k := e.known_from()) is not None and k <= on]
+        if known:
             eff = self.effective_date()
-            if eff is None or eff <= on:
+            if eff is None:
+                published = [e.date for e in finals if e.date is not None]
+                eff = min(published) if published else None
+            if eff is not None and eff <= on:
                 return Status.IN_FORCE
             return Status.PENDING
         if any(e.type == "proposed" for e in dated):
@@ -214,9 +239,11 @@ def _measure(raw: dict[str, Any]) -> Measure:
             raise RegistryError(f"{ew}: bad type {e.get('type')!r}")
         if not str(e.get("cite", "")).strip() or not str(e.get("url", "")).startswith("https://"):
             raise RegistryError(f"{ew}: cite and an https url are required")
-        events.append(
-            Event(e["type"], _date(e.get("date"), ew), e["cite"], e["url"], e.get("note", ""))
-        )
+        date = _date(e.get("date"), ew)
+        issued = _date(e.get("issued"), ew)
+        if issued is not None and (date is None or issued > date):
+            raise RegistryError(f"{ew}: issued must be on or before the publication date")
+        events.append(Event(e["type"], date, e["cite"], e["url"], e.get("note", ""), issued))
     if not events:
         raise RegistryError(f"{where}: at least one event is required")
     return Measure(

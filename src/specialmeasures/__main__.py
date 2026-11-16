@@ -49,6 +49,7 @@ def _cmd_status(reg: Registry, args: argparse.Namespace) -> int:
                     {
                         "type": e.type,
                         "date": e.date.isoformat() if e.date else None,
+                        "issued": e.issued.isoformat() if e.issued else None,
                         "cite": e.cite,
                         "url": e.url,
                         "note": e.note,

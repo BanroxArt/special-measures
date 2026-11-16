@@ -12,11 +12,11 @@ Built and maintained by Art Akopian, CEO of [Banrox](https://banrox.com). Banrox
 
 ## Why now
 
-On November 10, 2026 FinCEN published an order under section 9714 finding MEXC Global, a Seychelles-incorporated CVC exchanger, to be of primary money laundering concern in connection with Russian illicit finance ([91 FR 72420](https://www.federalregister.gov/d/2026-22962)). From **December 10, 2026** a covered financial institution may not send funds to or receive funds from MEXC Global. The order names current and former affiliates in Seychelles, Estonia, Switzerland, the United Kingdom and Singapore, covers successor entities, and excludes MEXC offices located in the United States. FinCEN's stated basis is USD 16.7 billion of likely illicit activity between May 2021 and May 2026, including exposure to Garantex, Grinex and the A7 Network.
+FinCEN issued an order under section 9714 on November 6, 2026 finding MEXC Global, a Seychelles-incorporated CVC exchanger, to be of primary money laundering concern in connection with Russian illicit finance. The order was published in the Federal Register on November 10, 2026 ([91 FR 72420](https://www.federalregister.gov/d/2026-22962)) and its DATES line reads "This action is effective December 10, 2026." From that date a covered financial institution may not send funds to or receive funds from MEXC Global. The order names current and former affiliates in footnote 1: MEXC Global Ltd and MX Global Ltd (Seychelles), MEXC Estonia OÜ, GIDA Technology AG (Switzerland), MXC Global Ltd (United Kingdom), and the formerly Singapore-incorporated MEXC Global Foundation Ltd and MEXC Singapore Pte Ltd. It covers successor entities and excludes MEXC offices located in the United States. The order assesses that since May 2021 MEXC Global "has facilitated at least USD 16.7 billion in likely illicit activity" ([91 FR 72424](https://www.federalregister.gov/d/2026-22962)), including exposure to Garantex, Grinex and the A7 Network. Treasury's [press release](https://home.treasury.gov/news/press-releases/sb0685) of November 6 uses "at least $16 billion"; the registry cites the order's figure.
 
 That one order shows every problem with keeping these lists by hand:
 
-- The order is in force on one date and not the day before. A payment on December 9 and one on December 10 get different answers.
+- The order has three dates: issued (November 6), published (November 10) and effective (December 10). Only the last one changes what a bank may do. A payment on December 9 and one on December 10 get different answers.
 - The names in a payment message are not the name in the order. `MX GLOBAL LTD`, `GIDA TECHNOLOGY AG` and `mexc.com` are all MEXC Global under the order's definition.
 - The scope has an exclusion (U.S. offices) that a name match alone cannot see.
 - It is a section 9714 order, so it will never appear in 31 CFR. A team that tracks only the eCFR misses it, along with Bitzlato, PM2BTC and the three Mexican institutions ordered under the FEND Off Fentanyl Act in 2025.
@@ -32,7 +32,13 @@ That one order shows every problem with keeping these lists by hand:
 | Proposed | A7 Network sub-agents, ten Mexican gambling establishments, MBaer Merchant Bank, Banque Misr UAE, and the Huione Group definition change adding H-Pay Service PLC |
 | Withdrawn | CVC mixing as a class of transactions; ABLV Bank |
 
-Each entry records the target, the authority (311, 9714 or 2313a), the measure type, the scope in plain words, the aliases and domains taken from the definition in the source document, and a dated event list: proposed, final, effective, effective date extended, amended, withdrawn. The full table with citations is in [docs/sources.md](docs/sources.md).
+Each entry records the target, the authority (311, 9714 or 2313a), the measure type, the scope in plain words, the aliases and domains taken from the definition in the source document, and a dated event list: proposed, final, effective, effective date extended, amended, withdrawn.
+
+Every event carries its Federal Register publication date in `date`. Where FinCEN's own [special measures table](https://www.fincen.gov/resources/statutes-and-regulations/special-measures/) dates the action earlier (it lists the day FinCEN issued or signed it, usually one to five days before publication, ten for the 2019 Iran rule and fifteen for PM2BTC), that date is in `issued`. `effective` events carry the effective date stated in the document's DATES line. Status logic:
+
+- `pending` starts on the issue date of a final rule or order, or the publication date when no issue date is recorded.
+- `in_force` starts on the recorded effective date and never on the issue date.
+- `proposed` and `withdrawn` run from the Federal Register date. A withdrawal takes effect "as of" its publication date. The full table with citations is in [docs/sources.md](docs/sources.md).
 
 ## Install
 
@@ -95,7 +101,8 @@ The tests include ordinary names that must not hit, such as `Mexico City Credit 
 ## Limits
 
 - The registry starts in 2022 for Federal Register documents. Older sections are included because they are in the current eCFR; their history before codification is not.
-- For FBME, North Korea, Bank of Dandong and Iran the registry records the final rule's publication date but not a separate effective date, so the status changes on publication. For Burma and Commercial Bank of Syria it records no date at all and reports them as in force.
+- For Burma and Commercial Bank of Syria the registry records no date at all and reports them as in force. The other pre-2022 final rules (FBME, North Korea, Bank of Dandong, Iran) carry their Federal Register publication and effective dates, but not the proposals that came before them.
+- Issue dates come from FinCEN's special measures table, which is a web page, not a legal document. They are there so the registry lines up with Treasury press releases; they never decide whether a measure is in force.
 - The eCFR does not show administrative rulings or exceptions. None have been checked for this release.
 - Jurisdiction measures match on the country you pass. The package does not look up a bank's country from a BIC or routing number.
 - Class-of-transactions measures (A7 sub-agents, the Mexican gambling establishments) match only the names listed in the proposal. FinCEN's definitions reach further ("any other entity identified by FinCEN").

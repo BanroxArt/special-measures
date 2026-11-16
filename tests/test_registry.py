@@ -37,7 +37,9 @@ def test_codified_sections_are_the_current_ecfr_subpart_f_list() -> None:
 @pytest.mark.parametrize(
     ("measure", "on", "expected"),
     [
-        ("mexc-global", D(2026, 11, 9), Status.NONE),
+        # Issued 2026-11-06, published 2026-11-10, effective 2026-12-10.
+        ("mexc-global", D(2026, 11, 5), Status.NONE),
+        ("mexc-global", D(2026, 11, 6), Status.PENDING),
         ("mexc-global", D(2026, 11, 10), Status.PENDING),
         ("mexc-global", D(2026, 12, 9), Status.PENDING),
         ("mexc-global", D(2026, 12, 10), Status.IN_FORCE),
@@ -53,6 +55,10 @@ def test_codified_sections_are_the_current_ecfr_subpart_f_list() -> None:
         ("al-huda-bank", D(2024, 7, 10), Status.PENDING),
         ("bitzlato", D(2023, 1, 31), Status.PENDING),
         ("bitzlato", D(2023, 2, 1), Status.IN_FORCE),
+        # Issued 2024-09-26; the order is effective on publication, 2024-10-11.
+        ("pm2btc", D(2024, 9, 25), Status.NONE),
+        ("pm2btc", D(2024, 9, 26), Status.PENDING),
+        ("pm2btc", D(2024, 10, 10), Status.PENDING),
         ("pm2btc", D(2024, 10, 11), Status.IN_FORCE),
         ("a7-sub-agents", D(2026, 11, 16), Status.PROPOSED),
         ("a7-sub-agents", D(2026, 10, 4), Status.NONE),
@@ -60,13 +66,47 @@ def test_codified_sections_are_the_current_ecfr_subpart_f_list() -> None:
         ("cvc-mixing", D(2026, 10, 6), Status.WITHDRAWN),
         ("ablv-bank", D(2024, 9, 26), Status.PROPOSED),
         ("ablv-bank", D(2024, 9, 27), Status.WITHDRAWN),
-        ("iran", D(2019, 11, 13), Status.NONE),
+        ("iran", D(2019, 10, 24), Status.NONE),
+        ("iran", D(2019, 11, 13), Status.PENDING),
         ("iran", D(2019, 11, 14), Status.IN_FORCE),
+        ("north-korea", D(2016, 12, 8), Status.PENDING),
+        ("north-korea", D(2016, 12, 9), Status.IN_FORCE),
+        ("fbme-bank", D(2016, 7, 28), Status.PENDING),
+        ("bank-of-dandong", D(2017, 12, 8), Status.IN_FORCE),
+        # Proposals and withdrawals run from the Federal Register date, not the issue date.
+        ("a7-sub-agents", D(2026, 10, 2), Status.NONE),
         ("burma", D(2000, 1, 1), Status.IN_FORCE),
     ],
 )
 def test_status_on(measure: str, on: dt.date, expected: Status) -> None:
     assert REG.get(measure).status_on(on) is expected
+
+
+def test_issue_date_is_never_after_publication_and_never_drives_in_force() -> None:
+    for m in REG.measures:
+        for e in m.events:
+            if e.issued is not None:
+                assert e.date is not None and e.issued <= e.date, (m.id, e)
+        eff = m.effective_date()
+        if eff is not None:
+            assert m.status_on(eff - dt.timedelta(days=1)) is not Status.IN_FORCE, m.id
+            assert m.status_on(eff) is Status.IN_FORCE or m.status_on(eff) is Status.WITHDRAWN
+
+
+def test_mexc_dates_match_the_order() -> None:
+    m = REG.get("mexc-global")
+    final = next(e for e in m.events if e.type == "final")
+    assert (final.issued, final.date) == (D(2026, 11, 6), D(2026, 11, 10))
+    assert final.cite == "91 FR 72420"
+    assert m.effective_date() == D(2026, 12, 10)
+
+
+def test_issued_after_published_is_rejected() -> None:
+    doc = raw()
+    ev = next(m for m in doc["measures"] if m["id"] == "mexc-global")["events"][0]
+    ev["issued"] = "2026-11-11"
+    with pytest.raises(RegistryError, match="issued must be on or before"):
+        parse(doc)
 
 
 def test_known_documents_cover_every_federal_register_url() -> None:
@@ -103,3 +143,26 @@ def test_load_from_path(tmp_path) -> None:  # type: ignore[no-untyped-def]
     p = tmp_path / "m.json"
     p.write_text(json.dumps(raw()), encoding="utf-8")
     assert len(load(p).measures) == len(REG.measures)
+
+
+def test_docs_sources_table_matches_registry() -> None:
+    from pathlib import Path
+
+    text = (Path(__file__).resolve().parents[1] / "docs" / "sources.md").read_text("utf-8")
+    rows = set()
+    for line in text.splitlines():
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if len(cells) == 7 and cells[2] != "Event" and not cells[2].startswith("---"):
+            rows.add((cells[2], cells[3], cells[4], cells[5], cells[6]))
+    want = {
+        (
+            e.type,
+            e.issued.isoformat() if e.issued else "-",
+            e.date.isoformat() if e.date else "-",
+            e.cite,
+            e.url,
+        )
+        for m in REG.measures
+        for e in m.events
+    }
+    assert rows == want

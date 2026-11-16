@@ -61,6 +61,48 @@ def test_typo_is_review() -> None:
     assert h.method is Method.FUZZY and h.disposition is Disposition.REVIEW
 
 
+# Names from footnote 1 of the MEXC order, 91 FR 72420.
+MEXC_ORDER_NAMES = (
+    "MEXC Global Ltd",
+    "MX Global Ltd",
+    "MEXC Estonia OÜ",
+    "GIDA Technology AG",
+    "MXC Global Ltd",
+    "MEXC Global Foundation Ltd",
+    "MEXC Singapore Pte Ltd",
+)
+PM2BTC_DOMAINS = (
+    "pm2btc.me",
+    "btc2pm.me",
+    "pm2cashin.me",
+    "btc2cashin.me",
+    "pm2wm.me",
+    "btc2wm.me",
+)
+
+
+@pytest.mark.parametrize("name", MEXC_ORDER_NAMES)
+def test_every_name_in_the_mexc_order_hits_mexc(name: str) -> None:
+    assert name in REG.get("mexc-global").match.names
+    h = top(name)
+    assert h is not None and h.measure_id == "mexc-global" and h.method is Method.EXACT
+
+
+@pytest.mark.parametrize("domain", PM2BTC_DOMAINS)
+def test_pm2btc_domains_belong_to_pm2btc_only(domain: str) -> None:
+    # Regression: an earlier summary listed these as MEXC aliases. They come from
+    # the PM2BTC order (89 FR 82499) and nothing else.
+    owners = [m.id for m in REG.measures if domain in m.match.domains]
+    assert owners == ["pm2btc"]
+    hits = screen(REG, Counterparty("", "", f"https://{domain}/"), AFTER)
+    assert {h.measure_id for h in hits} == {"pm2btc"}
+    assert not any(domain.split(".")[0] in n.lower() for n in REG.get("mexc-global").match.names)
+
+
+def test_mexc_domain_list_is_only_mexc_com() -> None:
+    assert REG.get("mexc-global").match.domains == ("mexc.com",)
+
+
 def test_domains() -> None:
     h = top(domain="https://btc2cashin.me/rates")
     assert h is not None and h.measure_id == "pm2btc" and h.method is Method.DOMAIN

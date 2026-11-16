@@ -3,7 +3,8 @@
   "as_of": "2026-11-16",
   "sources_checked": [
     "eCFR title 31 part 1010 subpart F, issue date 2026-11-12",
-    "Federal Register API, FinCEN documents matching \"special measure\" published 2022-01-01 to 2026-11-16"
+    "Federal Register API, FinCEN documents matching \"special measure\" published 2022-01-01 to 2026-11-16, plus the pre-2022 final rules for FBME Bank, North Korea, Bank of Dandong and Iran",
+    "FinCEN special measures table (issue dates), https://www.fincen.gov/resources/statutes-and-regulations/special-measures/, retrieved 2026-11-16"
   ],
   "measures": [
     {
@@ -75,8 +76,15 @@
         {
           "type": "final",
           "date": "2016-03-31",
-          "cite": "81 FR 18493",
-          "url": "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-F/section-1010.658"
+          "cite": "81 FR 18480",
+          "url": "https://www.federalregister.gov/d/2016-07210",
+          "note": "eCFR source note cites 81 FR 18493, the page with the rule text."
+        },
+        {
+          "type": "effective",
+          "date": "2016-07-29",
+          "cite": "81 FR 18480",
+          "url": "https://www.federalregister.gov/d/2016-07210"
         }
       ]
     },
@@ -100,7 +108,13 @@
           "type": "final",
           "date": "2016-11-09",
           "cite": "81 FR 78715",
-          "url": "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-F/section-1010.659"
+          "url": "https://www.federalregister.gov/d/2016-27049"
+        },
+        {
+          "type": "effective",
+          "date": "2016-12-09",
+          "cite": "81 FR 78715",
+          "url": "https://www.federalregister.gov/d/2016-27049"
         }
       ]
     },
@@ -124,8 +138,15 @@
         {
           "type": "final",
           "date": "2017-11-08",
-          "cite": "82 FR 51765",
-          "url": "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-F/section-1010.660"
+          "cite": "82 FR 51758",
+          "url": "https://www.federalregister.gov/d/2017-24238",
+          "note": "eCFR source note cites 82 FR 51765, the page with the rule text."
+        },
+        {
+          "type": "effective",
+          "date": "2017-12-08",
+          "cite": "82 FR 51758",
+          "url": "https://www.federalregister.gov/d/2017-24238"
         }
       ]
     },
@@ -147,9 +168,17 @@
       "events": [
         {
           "type": "final",
+          "date": "2019-11-04",
+          "issued": "2019-10-25",
+          "cite": "84 FR 59302",
+          "url": "https://www.federalregister.gov/d/2019-23697",
+          "note": "FinCEN's table dates the final rule 2019-10-25."
+        },
+        {
+          "type": "effective",
           "date": "2019-11-14",
           "cite": "84 FR 59302",
-          "url": "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-F/section-1010.661"
+          "url": "https://www.federalregister.gov/d/2019-23697"
         }
       ]
     },
@@ -217,12 +246,14 @@
         {
           "type": "proposed",
           "date": "2025-05-05",
+          "issued": "2025-05-01",
           "cite": "90 FR 18934",
           "url": "https://www.federalregister.gov/d/2025-07837"
         },
         {
           "type": "final",
           "date": "2025-10-16",
+          "issued": "2025-10-15",
           "cite": "90 FR 48295",
           "url": "https://www.federalregister.gov/d/2025-19571"
         },
@@ -235,6 +266,7 @@
         {
           "type": "amendment_proposed",
           "date": "2026-06-25",
+          "issued": "2026-06-23",
           "cite": "91 FR 38340",
           "url": "https://www.federalregister.gov/d/2026-12794",
           "note": "Comments were due July 27, 2026. Not final as of the as_of date."
@@ -262,6 +294,7 @@
         {
           "type": "final",
           "date": "2023-01-23",
+          "issued": "2023-01-18",
           "cite": "88 FR 3919",
           "url": "https://www.federalregister.gov/d/2023-01189"
         },
@@ -299,8 +332,10 @@
         {
           "type": "final",
           "date": "2024-10-11",
+          "issued": "2024-09-26",
           "cite": "89 FR 82499",
-          "url": "https://www.federalregister.gov/d/2024-23430"
+          "url": "https://www.federalregister.gov/d/2024-23430",
+          "note": "Issued by FinCEN on 2024-09-26; published 2024-10-11. The order states it is effective October 11, 2024, the publication date."
         },
         {
           "type": "effective",
@@ -330,12 +365,14 @@
         {
           "type": "final",
           "date": "2025-06-30",
+          "issued": "2025-06-25",
           "cite": "90 FR 27770",
           "url": "https://www.federalregister.gov/d/2025-11993"
         },
         {
           "type": "effective_extended",
           "date": "2025-07-11",
+          "issued": "2025-07-09",
           "cite": "90 FR 30826",
           "url": "https://www.federalregister.gov/d/2025-12973",
           "note": "Effective date moved to 2025-09-04."
@@ -356,6 +393,7 @@
         {
           "type": "amended",
           "date": "2026-04-16",
+          "issued": "2026-04-15",
           "cite": "91 FR 20362",
           "url": "https://www.federalregister.gov/d/2026-07416",
           "note": "Allows certain transmittals for the liquidation of CIBanco."
@@ -383,12 +421,14 @@
         {
           "type": "final",
           "date": "2025-06-30",
+          "issued": "2025-06-25",
           "cite": "90 FR 27777",
           "url": "https://www.federalregister.gov/d/2025-11990"
         },
         {
           "type": "effective_extended",
           "date": "2025-07-11",
+          "issued": "2025-07-09",
           "cite": "90 FR 30826",
           "url": "https://www.federalregister.gov/d/2025-12973",
           "note": "Effective date moved to 2025-09-04."
@@ -428,12 +468,14 @@
         {
           "type": "final",
           "date": "2025-06-30",
+          "issued": "2025-06-25",
           "cite": "90 FR 27764",
           "url": "https://www.federalregister.gov/d/2025-11991"
         },
         {
           "type": "effective_extended",
           "date": "2025-07-11",
+          "issued": "2025-07-09",
           "cite": "90 FR 30826",
           "url": "https://www.federalregister.gov/d/2025-12973",
           "note": "Effective date moved to 2025-09-04."
@@ -486,14 +528,17 @@
         {
           "type": "final",
           "date": "2026-11-10",
+          "issued": "2026-11-06",
           "cite": "91 FR 72420",
-          "url": "https://www.federalregister.gov/d/2026-22962"
+          "url": "https://www.federalregister.gov/d/2026-22962",
+          "note": "Issued by FinCEN on 2026-11-06 (Treasury press release sb0685); published in the Federal Register on 2026-11-10. The order states it is effective December 10, 2026."
         },
         {
           "type": "effective",
           "date": "2026-12-10",
           "cite": "91 FR 72420",
-          "url": "https://www.federalregister.gov/d/2026-22962"
+          "url": "https://www.federalregister.gov/d/2026-22962",
+          "note": "DATES: \"This action is effective December 10, 2026.\""
         }
       ]
     },
@@ -522,6 +567,7 @@
         {
           "type": "proposed",
           "date": "2026-10-05",
+          "issued": "2026-10-01",
           "cite": "91 FR 63208",
           "url": "https://www.federalregister.gov/d/2026-20371"
         }
@@ -551,6 +597,7 @@
         {
           "type": "proposed",
           "date": "2025-11-17",
+          "issued": "2025-11-13",
           "cite": "90 FR 51234",
           "url": "https://www.federalregister.gov/d/2025-19927"
         }
@@ -577,6 +624,7 @@
         {
           "type": "proposed",
           "date": "2026-03-02",
+          "issued": "2026-02-26",
           "cite": "91 FR 10034",
           "url": "https://www.federalregister.gov/d/2026-04033"
         }
@@ -608,6 +656,7 @@
         {
           "type": "proposed",
           "date": "2026-09-01",
+          "issued": "2026-08-28",
           "cite": "91 FR 56085",
           "url": "https://www.federalregister.gov/d/2026-17871"
         }
@@ -630,6 +679,7 @@
         {
           "type": "proposed",
           "date": "2023-10-23",
+          "issued": "2023-10-19",
           "cite": "88 FR 72701",
           "url": "https://www.federalregister.gov/d/2023-23449"
         },
@@ -662,13 +712,15 @@
         {
           "type": "proposed",
           "date": "2018-02-16",
+          "issued": "2018-02-13",
           "cite": "83 FR 6986",
-          "url": "https://www.federalregister.gov/d/2024-22299",
+          "url": "https://www.federalregister.gov/d/2018-03214",
           "note": "Date and citation as given in the withdrawal notice."
         },
         {
           "type": "withdrawn",
           "date": "2024-09-27",
+          "issued": "2024-09-26",
           "cite": "89 FR 79184",
           "url": "https://www.federalregister.gov/d/2024-22299"
         }
