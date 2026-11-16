@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it using these metadata.
+type: software
+title: special-measures
+abstract: >-
+  Machine-readable FinCEN special measures with Federal Register citations,
+  status on any date, and counterparty screening. Engineering checklist, not
+  legal advice.
+authors:
+  - family-names: Akopian
+    given-names: Art
+    affiliation: Banrox Inc.
+    email: opensource@banrox.com
+repository-code: https://github.com/BanroxArt/special-measures
+license: MIT
+version: 0.1.0
+date-released: 2026-11-16
+keywords:
+  - aml
+  - fincen
+  - section-311
+  - sanctions-screening

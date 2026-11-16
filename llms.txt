@@ -1,0 +1,28 @@
+# special-measures
+
+> Machine-readable FinCEN special measures (section 311, section 9714, FEND Off Fentanyl 2313a) with Federal Register citations, status on any date, and counterparty screening. Engineering checklist, not legal advice.
+
+The registry lists 20 FinCEN actions as of 2026-11-16, each with dated, cited events. The screener matches names, domains and jurisdictions and reports hit, review, pending, watch or info for a payment date.
+
+Built and maintained by Art Akopian, CEO of Banrox (https://banrox.com).
+
+## Docs
+
+- [README.md](https://github.com/BanroxArt/special-measures/blob/main/README.md): Why, what is in the registry, usage, matching rules, limits.
+- [docs/sources.md](https://github.com/BanroxArt/special-measures/blob/main/docs/sources.md): Every event with its citation and source URL, and notes on reading the sources.
+- [docs/benchmarks.md](https://github.com/BanroxArt/special-measures/blob/main/docs/benchmarks.md): Screening throughput.
+- [SKILL.md](https://github.com/BanroxArt/special-measures/blob/main/SKILL.md): Agent skill for screening counterparties with this package.
+
+## Source
+
+- [data/measures.json](https://github.com/BanroxArt/special-measures/blob/main/src/specialmeasures/data/measures.json): The registry.
+- [registry.py](https://github.com/BanroxArt/special-measures/blob/main/src/specialmeasures/registry.py): Schema validation and status on a date.
+- [normalize.py](https://github.com/BanroxArt/special-measures/blob/main/src/specialmeasures/normalize.py): Name folding and legal-form removal.
+- [screen.py](https://github.com/BanroxArt/special-measures/blob/main/src/specialmeasures/screen.py): Matching and dispositions.
+- [watch.py](https://github.com/BanroxArt/special-measures/blob/main/src/specialmeasures/watch.py): Federal Register API check for documents the registry does not cite.
+
+## Optional
+
+- [CHANGELOG](https://github.com/BanroxArt/special-measures/blob/main/CHANGELOG.md): Notable changes.
+- [SECURITY](https://github.com/BanroxArt/special-measures/blob/main/SECURITY.md): How to report a vulnerability.
+- [CONTRIBUTING](https://github.com/BanroxArt/special-measures/blob/main/CONTRIBUTING.md): How to propose a change.

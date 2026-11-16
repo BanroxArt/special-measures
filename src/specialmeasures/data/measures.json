@@ -1,0 +1,678 @@
+{
+  "schema": 1,
+  "as_of": "2026-11-16",
+  "sources_checked": [
+    "eCFR title 31 part 1010 subpart F, issue date 2026-11-12",
+    "Federal Register API, FinCEN documents matching \"special measure\" published 2022-01-01 to 2026-11-16"
+  ],
+  "measures": [
+    {
+      "id": "burma",
+      "target": "Burma",
+      "kind": "jurisdiction",
+      "authority": "311",
+      "measure": "correspondent_prohibition",
+      "cfr": "31 CFR 1010.651",
+      "match": {
+        "countries": [
+          "MM"
+        ],
+        "names": [],
+        "domains": []
+      },
+      "scope": "Burmese banking institutions: foreign banks chartered or licensed by Burma, including branches and offices outside Burma. Read the section for the Executive Order 13310 carve-outs. The eCFR text does not show administrative rulings or exceptions; this registry has not checked for any, so look on fincen.gov before relying on this entry.",
+      "events": [
+        {
+          "type": "codified",
+          "date": null,
+          "cite": "31 CFR 1010.651",
+          "url": "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-F/section-1010.651"
+        }
+      ]
+    },
+    {
+      "id": "commercial-bank-of-syria",
+      "target": "Commercial Bank of Syria",
+      "kind": "institution",
+      "authority": "311",
+      "measure": "correspondent_prohibition",
+      "cfr": "31 CFR 1010.653",
+      "match": {
+        "countries": [],
+        "names": [
+          "Commercial Bank of Syria",
+          "Syrian Lebanese Commercial Bank"
+        ],
+        "domains": []
+      },
+      "scope": "Any branch, office or subsidiary of Commercial Bank of Syria in Syria or any other jurisdiction, including Syrian Lebanese Commercial Bank.",
+      "events": [
+        {
+          "type": "codified",
+          "date": null,
+          "cite": "31 CFR 1010.653",
+          "url": "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-F/section-1010.653"
+        }
+      ]
+    },
+    {
+      "id": "fbme-bank",
+      "target": "FBME Bank, Ltd.",
+      "kind": "institution",
+      "authority": "311",
+      "measure": "correspondent_prohibition",
+      "cfr": "31 CFR 1010.658",
+      "match": {
+        "countries": [],
+        "names": [
+          "FBME Bank Ltd",
+          "FBME Bank"
+        ],
+        "domains": []
+      },
+      "scope": "All branches, offices and subsidiaries of FBME Bank, Ltd. in any jurisdiction.",
+      "events": [
+        {
+          "type": "final",
+          "date": "2016-03-31",
+          "cite": "81 FR 18493",
+          "url": "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-F/section-1010.658"
+        }
+      ]
+    },
+    {
+      "id": "north-korea",
+      "target": "North Korea",
+      "kind": "jurisdiction",
+      "authority": "311",
+      "measure": "correspondent_prohibition",
+      "cfr": "31 CFR 1010.659",
+      "match": {
+        "countries": [
+          "KP"
+        ],
+        "names": [],
+        "domains": []
+      },
+      "scope": "North Korean banking institutions and North Korean financial institutions, wherever located, including branches and offices in North Korea of any foreign financial institution.",
+      "events": [
+        {
+          "type": "final",
+          "date": "2016-11-09",
+          "cite": "81 FR 78715",
+          "url": "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-F/section-1010.659"
+        }
+      ]
+    },
+    {
+      "id": "bank-of-dandong",
+      "target": "Bank of Dandong",
+      "kind": "institution",
+      "authority": "311",
+      "measure": "correspondent_prohibition",
+      "cfr": "31 CFR 1010.660",
+      "match": {
+        "countries": [],
+        "names": [
+          "Bank of Dandong Co., Ltd.",
+          "Bank of Dandong"
+        ],
+        "domains": []
+      },
+      "scope": "All subsidiaries, branches and offices of Bank of Dandong Co., Ltd. in any jurisdiction.",
+      "events": [
+        {
+          "type": "final",
+          "date": "2017-11-08",
+          "cite": "82 FR 51765",
+          "url": "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-F/section-1010.660"
+        }
+      ]
+    },
+    {
+      "id": "iran",
+      "target": "Iran",
+      "kind": "jurisdiction",
+      "authority": "311",
+      "measure": "correspondent_prohibition",
+      "cfr": "31 CFR 1010.661",
+      "match": {
+        "countries": [
+          "IR"
+        ],
+        "names": [],
+        "domains": []
+      },
+      "scope": "Iranian financial institutions wherever located, and branches or offices in Iran of any foreign financial institution, unless the account is authorized by OFAC.",
+      "events": [
+        {
+          "type": "final",
+          "date": "2019-11-14",
+          "cite": "84 FR 59302",
+          "url": "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-F/section-1010.661"
+        }
+      ]
+    },
+    {
+      "id": "al-huda-bank",
+      "target": "Al-Huda Bank",
+      "kind": "institution",
+      "authority": "311",
+      "measure": "correspondent_prohibition",
+      "cfr": "31 CFR 1010.663",
+      "match": {
+        "countries": [],
+        "names": [
+          "Al-Huda Bank",
+          "Al Huda Bank"
+        ],
+        "domains": []
+      },
+      "scope": "All subsidiaries, branches and offices of Al-Huda Bank operating as a bank in any jurisdiction.",
+      "events": [
+        {
+          "type": "proposed",
+          "date": "2024-01-31",
+          "cite": "89 FR 6074",
+          "url": "https://www.federalregister.gov/d/2024-02004"
+        },
+        {
+          "type": "final",
+          "date": "2024-07-03",
+          "cite": "89 FR 55051",
+          "url": "https://www.federalregister.gov/d/2024-14415"
+        },
+        {
+          "type": "effective",
+          "date": "2024-08-02",
+          "cite": "89 FR 55051",
+          "url": "https://www.federalregister.gov/d/2024-14415"
+        }
+      ]
+    },
+    {
+      "id": "huione-group",
+      "target": "Huione Group",
+      "kind": "institution",
+      "authority": "311",
+      "measure": "correspondent_prohibition",
+      "cfr": "31 CFR 1010.664",
+      "match": {
+        "countries": [],
+        "names": [
+          "Huione Group",
+          "Haowang Guarantee",
+          "Huione Guarantee",
+          "Huione Pay PLC",
+          "Huione Crypto Spółka Z Ograniczoną Odpowiedzialnością",
+          "Huione Crypto"
+        ],
+        "proposed_names": [
+          "H-Pay Service PLC"
+        ],
+        "domains": []
+      },
+      "scope": "All subsidiaries, branches and offices of Huione Group operating as a financial institution outside the United States. A June 2026 proposal would add H-Pay Service PLC and any successor entity to the definition.",
+      "events": [
+        {
+          "type": "proposed",
+          "date": "2025-05-05",
+          "cite": "90 FR 18934",
+          "url": "https://www.federalregister.gov/d/2025-07837"
+        },
+        {
+          "type": "final",
+          "date": "2025-10-16",
+          "cite": "90 FR 48295",
+          "url": "https://www.federalregister.gov/d/2025-19571"
+        },
+        {
+          "type": "effective",
+          "date": "2025-11-17",
+          "cite": "90 FR 48295",
+          "url": "https://www.federalregister.gov/d/2025-19571"
+        },
+        {
+          "type": "amendment_proposed",
+          "date": "2026-06-25",
+          "cite": "91 FR 38340",
+          "url": "https://www.federalregister.gov/d/2026-12794",
+          "note": "Comments were due July 27, 2026. Not final as of the as_of date."
+        }
+      ]
+    },
+    {
+      "id": "bitzlato",
+      "target": "Bitzlato Limited",
+      "kind": "institution",
+      "authority": "9714",
+      "measure": "transmittal_prohibition",
+      "cfr": null,
+      "match": {
+        "countries": [],
+        "names": [
+          "Bitzlato Limited",
+          "Bitzlato",
+          "ChangeBot"
+        ],
+        "domains": []
+      },
+      "scope": "All subsidiaries, branches and offices of Bitzlato in any jurisdiction, and any successor entity. Previously known as ChangeBot.",
+      "events": [
+        {
+          "type": "final",
+          "date": "2023-01-23",
+          "cite": "88 FR 3919",
+          "url": "https://www.federalregister.gov/d/2023-01189"
+        },
+        {
+          "type": "effective",
+          "date": "2023-02-01",
+          "cite": "88 FR 3919",
+          "url": "https://www.federalregister.gov/d/2023-01189"
+        }
+      ]
+    },
+    {
+      "id": "pm2btc",
+      "target": "PM2BTC",
+      "kind": "institution",
+      "authority": "9714",
+      "measure": "transmittal_prohibition",
+      "cfr": null,
+      "match": {
+        "countries": [],
+        "names": [
+          "PM2BTC"
+        ],
+        "domains": [
+          "pm2btc.me",
+          "btc2pm.me",
+          "pm2cashin.me",
+          "btc2cashin.me",
+          "pm2wm.me",
+          "btc2wm.me"
+        ]
+      },
+      "scope": "Unincorporated CVC exchanger made up of the services PM2BTC.ME, BTC2PM.ME, PM2CASHIN.ME, BTC2CASHIN.ME, PM2WM.ME and BTC2WM.ME, and any successor entity.",
+      "events": [
+        {
+          "type": "final",
+          "date": "2024-10-11",
+          "cite": "89 FR 82499",
+          "url": "https://www.federalregister.gov/d/2024-23430"
+        },
+        {
+          "type": "effective",
+          "date": "2024-10-11",
+          "cite": "89 FR 82499",
+          "url": "https://www.federalregister.gov/d/2024-23430"
+        }
+      ]
+    },
+    {
+      "id": "cibanco",
+      "target": "CIBanco S.A., Institución de Banca Múltiple",
+      "kind": "institution",
+      "authority": "2313a",
+      "measure": "transmittal_prohibition",
+      "cfr": null,
+      "match": {
+        "countries": [],
+        "names": [
+          "CIBanco S.A., Institución de Banca Múltiple",
+          "CIBanco"
+        ],
+        "domains": []
+      },
+      "scope": "Prohibits certain transmittals of funds involving CIBanco. The April 2026 amendment allows certain transmittals needed for the Government of Mexico to liquidate CIBanco; read it before blocking a liquidation payment.",
+      "events": [
+        {
+          "type": "final",
+          "date": "2025-06-30",
+          "cite": "90 FR 27770",
+          "url": "https://www.federalregister.gov/d/2025-11993"
+        },
+        {
+          "type": "effective_extended",
+          "date": "2025-07-11",
+          "cite": "90 FR 30826",
+          "url": "https://www.federalregister.gov/d/2025-12973",
+          "note": "Effective date moved to 2025-09-04."
+        },
+        {
+          "type": "effective_extended",
+          "date": "2025-08-22",
+          "cite": "90 FR 40974",
+          "url": "https://www.federalregister.gov/d/2025-16080",
+          "note": "Effective date moved to 2025-10-20."
+        },
+        {
+          "type": "effective",
+          "date": "2025-10-20",
+          "cite": "90 FR 40974",
+          "url": "https://www.federalregister.gov/d/2025-16080"
+        },
+        {
+          "type": "amended",
+          "date": "2026-04-16",
+          "cite": "91 FR 20362",
+          "url": "https://www.federalregister.gov/d/2026-07416",
+          "note": "Allows certain transmittals for the liquidation of CIBanco."
+        }
+      ]
+    },
+    {
+      "id": "intercam",
+      "target": "Intercam Banco S.A., Institución de Banca Múltiple",
+      "kind": "institution",
+      "authority": "2313a",
+      "measure": "transmittal_prohibition",
+      "cfr": null,
+      "match": {
+        "countries": [],
+        "names": [
+          "Intercam Banco S.A., Institución de Banca Múltiple",
+          "Intercam Banco",
+          "Intercam"
+        ],
+        "domains": []
+      },
+      "scope": "Prohibits certain transmittals of funds involving Intercam.",
+      "events": [
+        {
+          "type": "final",
+          "date": "2025-06-30",
+          "cite": "90 FR 27777",
+          "url": "https://www.federalregister.gov/d/2025-11990"
+        },
+        {
+          "type": "effective_extended",
+          "date": "2025-07-11",
+          "cite": "90 FR 30826",
+          "url": "https://www.federalregister.gov/d/2025-12973",
+          "note": "Effective date moved to 2025-09-04."
+        },
+        {
+          "type": "effective_extended",
+          "date": "2025-08-22",
+          "cite": "90 FR 40974",
+          "url": "https://www.federalregister.gov/d/2025-16080",
+          "note": "Effective date moved to 2025-10-20."
+        },
+        {
+          "type": "effective",
+          "date": "2025-10-20",
+          "cite": "90 FR 40974",
+          "url": "https://www.federalregister.gov/d/2025-16080"
+        }
+      ]
+    },
+    {
+      "id": "vector-casa-de-bolsa",
+      "target": "Vector Casa de Bolsa, S.A. de C.V.",
+      "kind": "institution",
+      "authority": "2313a",
+      "measure": "transmittal_prohibition",
+      "cfr": null,
+      "match": {
+        "countries": [],
+        "names": [
+          "Vector Casa de Bolsa, S.A. de C.V.",
+          "Vector Casa de Bolsa"
+        ],
+        "domains": []
+      },
+      "scope": "Prohibits certain transmittals of funds involving Vector Casa de Bolsa.",
+      "events": [
+        {
+          "type": "final",
+          "date": "2025-06-30",
+          "cite": "90 FR 27764",
+          "url": "https://www.federalregister.gov/d/2025-11991"
+        },
+        {
+          "type": "effective_extended",
+          "date": "2025-07-11",
+          "cite": "90 FR 30826",
+          "url": "https://www.federalregister.gov/d/2025-12973",
+          "note": "Effective date moved to 2025-09-04."
+        },
+        {
+          "type": "effective_extended",
+          "date": "2025-08-22",
+          "cite": "90 FR 40974",
+          "url": "https://www.federalregister.gov/d/2025-16080",
+          "note": "Effective date moved to 2025-10-20."
+        },
+        {
+          "type": "effective",
+          "date": "2025-10-20",
+          "cite": "90 FR 40974",
+          "url": "https://www.federalregister.gov/d/2025-16080"
+        }
+      ]
+    },
+    {
+      "id": "mexc-global",
+      "target": "MEXC Global",
+      "kind": "institution",
+      "authority": "9714",
+      "measure": "transmittal_prohibition",
+      "cfr": null,
+      "match": {
+        "countries": [],
+        "names": [
+          "MEXC Global",
+          "MEXC Global Ltd",
+          "MX Global Ltd",
+          "MEXC Estonia OÜ",
+          "GIDA Technology AG",
+          "MXC Global Ltd",
+          "MEXC Global Foundation Ltd",
+          "MEXC Singapore Pte Ltd",
+          "MEXC",
+          "MXC Exchange"
+        ],
+        "domains": [
+          "mexc.com"
+        ],
+        "excluded_countries": [
+          "US"
+        ]
+      },
+      "scope": "MEXC Global and its subsidiaries, branches and offices operating outside the United States, and successor entities. Branches, subsidiaries and offices located in the United States are expressly excluded. The order recognises that a covered institution may be unable to reject incoming CVC and lets it act on the facts of the transfer.",
+      "events": [
+        {
+          "type": "final",
+          "date": "2026-11-10",
+          "cite": "91 FR 72420",
+          "url": "https://www.federalregister.gov/d/2026-22962"
+        },
+        {
+          "type": "effective",
+          "date": "2026-12-10",
+          "cite": "91 FR 72420",
+          "url": "https://www.federalregister.gov/d/2026-22962"
+        }
+      ]
+    },
+    {
+      "id": "a7-sub-agents",
+      "target": "A7 Network Sub-Agents",
+      "kind": "class_of_transactions",
+      "authority": "9714",
+      "measure": "transmittal_prohibition",
+      "cfr": null,
+      "match": {
+        "countries": [],
+        "names": [],
+        "proposed_names": [
+          "Galadriel Trading FZCO",
+          "Gimli Trade LLC-FZ",
+          "Hydrofusion Resources FZ-LLC",
+          "Pearl Bridge",
+          "Power Sphere LLC-FZ",
+          "Sigizmund FZCO"
+        ],
+        "domains": []
+      },
+      "scope": "Proposed: prohibit transmittals of funds involving businesses identified as A7 Network Sub-Agents, and treat the A7A5 stablecoin as CVC for the rule. Comments closed 2026-11-04. Nothing is in force under this proposal.",
+      "events": [
+        {
+          "type": "proposed",
+          "date": "2026-10-05",
+          "cite": "91 FR 63208",
+          "url": "https://www.federalregister.gov/d/2026-20371"
+        }
+      ]
+    },
+    {
+      "id": "mexican-gambling-establishments",
+      "target": "Ten Mexican gambling establishments",
+      "kind": "class_of_transactions",
+      "authority": "2313a",
+      "measure": "transmittal_prohibition",
+      "cfr": null,
+      "match": {
+        "countries": [],
+        "names": [],
+        "proposed_names": [
+          "Casino Emine",
+          "Casino Mirage",
+          "Midas Casino",
+          "Palermo Casino",
+          "Skampa Casino"
+        ],
+        "domains": []
+      },
+      "scope": "Proposed 31 CFR 1010.665: transactions involving ten named casinos in Sonora, Sinaloa, Baja California and Tabasco. Several names are common words or common casino names; expect false positives and match on city as well.",
+      "events": [
+        {
+          "type": "proposed",
+          "date": "2025-11-17",
+          "cite": "90 FR 51234",
+          "url": "https://www.federalregister.gov/d/2025-19927"
+        }
+      ]
+    },
+    {
+      "id": "mbaer-merchant-bank",
+      "target": "MBaer Merchant Bank AG",
+      "kind": "institution",
+      "authority": "9714",
+      "measure": "correspondent_prohibition",
+      "cfr": null,
+      "match": {
+        "countries": [],
+        "names": [],
+        "proposed_names": [
+          "MBaer Merchant Bank AG",
+          "MBaer Merchant Bank"
+        ],
+        "domains": []
+      },
+      "scope": "Proposed. All subsidiaries, branches and offices of MBaer Merchant Bank AG operating outside the United States.",
+      "events": [
+        {
+          "type": "proposed",
+          "date": "2026-03-02",
+          "cite": "91 FR 10034",
+          "url": "https://www.federalregister.gov/d/2026-04033"
+        }
+      ]
+    },
+    {
+      "id": "banque-misr-uae",
+      "target": "Banque Misr UAE",
+      "kind": "institution",
+      "authority": "311",
+      "measure": "correspondent_prohibition",
+      "cfr": null,
+      "match": {
+        "countries": [],
+        "names": [],
+        "proposed_names": [
+          "Banque Misr UAE"
+        ],
+        "proposed_scoped": [
+          {
+            "name": "Banque Misr",
+            "country": "AE"
+          }
+        ],
+        "domains": []
+      },
+      "scope": "Proposed. The five UAE branches of Banque Misr only. Banque Misr outside the UAE is not covered; a match on the bare name needs the branch country.",
+      "events": [
+        {
+          "type": "proposed",
+          "date": "2026-09-01",
+          "cite": "91 FR 56085",
+          "url": "https://www.federalregister.gov/d/2026-17871"
+        }
+      ]
+    },
+    {
+      "id": "cvc-mixing",
+      "target": "Convertible virtual currency mixing",
+      "kind": "class_of_transactions",
+      "authority": "311",
+      "measure": "recordkeeping",
+      "cfr": null,
+      "match": {
+        "countries": [],
+        "names": [],
+        "domains": []
+      },
+      "scope": "Withdrawn. The 2023 proposal would have required reporting of CVC mixing transactions.",
+      "events": [
+        {
+          "type": "proposed",
+          "date": "2023-10-23",
+          "cite": "88 FR 72701",
+          "url": "https://www.federalregister.gov/d/2023-23449"
+        },
+        {
+          "type": "withdrawn",
+          "date": "2026-10-06",
+          "cite": "91 FR 63513",
+          "url": "https://www.federalregister.gov/d/2026-20429"
+        }
+      ]
+    },
+    {
+      "id": "ablv-bank",
+      "target": "ABLV Bank, AS",
+      "kind": "institution",
+      "authority": "311",
+      "measure": "correspondent_prohibition",
+      "cfr": null,
+      "match": {
+        "countries": [],
+        "names": [],
+        "withdrawn_names": [
+          "ABLV Bank, AS",
+          "ABLV Bank"
+        ],
+        "domains": []
+      },
+      "scope": "Withdrawn. The 2018 finding and proposed rule were withdrawn in 2024.",
+      "events": [
+        {
+          "type": "proposed",
+          "date": "2018-02-16",
+          "cite": "83 FR 6986",
+          "url": "https://www.federalregister.gov/d/2024-22299",
+          "note": "Date and citation as given in the withdrawal notice."
+        },
+        {
+          "type": "withdrawn",
+          "date": "2024-09-27",
+          "cite": "89 FR 79184",
+          "url": "https://www.federalregister.gov/d/2024-22299"
+        }
+      ]
+    }
+  ]
+}
